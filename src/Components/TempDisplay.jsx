@@ -1,7 +1,17 @@
-import React from 'react'
+import React from 'react';
 
-export default function TempDisplay() {
+export default function TempDisplay({ tempDisplay, scale, temp }) {
+  let tempSign = scale ? '℉' : '℃';
+  let tempSignR = scale ? '℃' : '℉';
   return (
-    <div>TempOutput</div>
-  )
+    <div>
+      <div className="display__group">
+        <div className="display__text">
+          <h1>
+            {temp} {tempSign} = {tempDisplay} {tempSignR}
+          </h1>
+        </div>
+      </div>
+    </div>
+  );
 }
