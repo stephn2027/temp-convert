@@ -1,11 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import { ToggleButtonGroup,ToggleButton } from '@mui/material';
-export default function Temp({ temp, setTemp, scale, onChangeScale }) {
+import { ToggleButtonGroup, ToggleButton } from '@mui/material';
+
+
+
+
+export default function Temp({ temp, setTemp, scale, onChangeScale, isDark }) {
   const scaleName = scale ? ' Celcius ' : ' Farenheit ';
   const scaleNameR = scale ? ' Farenheit ' : ' Celcius ';
   const tempSign = !scale ? '℃' : '℉';
-  const tempSignR = scale? '℃' : '℉';
-  
+  const tempSignR = scale ? '℃' : '℉';
+
   return (
     <div className="temp temp__container">
       <form className="temp__form">
@@ -28,20 +32,23 @@ export default function Temp({ temp, setTemp, scale, onChangeScale }) {
             onChange={(e) => setTemp(e.target.value)}
           />
         </div>
-        <div className='toggle__group'>
+        <div className="toggle__group">
+         
+            <ToggleButtonGroup
+              color={'info'}
+              value={scale ? scaleName : scaleNameR}
+              exclusive
+              onChange={onChangeScale}
+              
+            >
+              <div className="toggle__text">Swap Units</div>
+             
+                <ToggleButton value={scaleName}  >℃</ToggleButton>
 
-        <ToggleButtonGroup
-          color="primary"
-          value={scale?scaleName:scaleNameR}
-          exclusive
-          onChange={onChangeScale}
-        >
-          <div className='toggle__text'>Swap Units</div>
-          <ToggleButton value={scaleName}>℃</ToggleButton>
+                <ToggleButton value={scaleNameR} > ℉ </ToggleButton>
+              
+            </ToggleButtonGroup>
          
-          <ToggleButton value={scaleNameR}> ℉ </ToggleButton>
-         
-        </ToggleButtonGroup>
         </div>
       </form>
     </div>

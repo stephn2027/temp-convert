@@ -5,6 +5,7 @@ import Temp from './Temp';
 import TempDisplay from './TempDisplay';
 import { MaterialUISwitch } from '../contexts/switchButton';
 import FormControlLabel from '@mui/material/FormControlLabel';
+import { AppStyles } from '../contexts/appStyles';
 
 function App() {
   
@@ -35,19 +36,26 @@ function App() {
   };
 
   return (
+    <AppStyles>
+
+   
     <div className="App" style={{backgroundColor:theme.backgroundColor,color:theme.color,border:theme.border}}>
-    <div className='app__theme theme--switch'>its a {isDark?"Dark theme":"light theme"} 
-    
+    <div className='app__theme--switch'>its a {isDark?"Dark theme":"light theme"} 
+     
+
       <FormControlLabel
-        control={<MaterialUISwitch sx={{ m: 1 }} defaultValue  />}
+        control={<MaterialUISwitch sx={{ m: 1 }} checked={isDark}  />}
         label={`switch to ${!isDark?"Dark theme":"Light theme"}`}
         onClick={toggleTheme}
       />
+     
+
     </div>
       <Temp
         temp={temp}
         onChangeScale={handleChangeScale}
         scale={scale}
+        isDark={isDark}
         setTemp={setTemp}
       ></Temp>
       <TempDisplay
@@ -56,6 +64,7 @@ function App() {
         scale={scale}
       ></TempDisplay>
     </div>
+    </AppStyles>
   );
 }
 

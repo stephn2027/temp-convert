@@ -4,7 +4,7 @@ export const ThemeContext = createContext();
 
 const themes = {
   darkMode: {
-    backgroundColor: 'black',
+    backgroundColor: '#2c387e',
     color: 'white',
     border:"10px solid blue"
   },

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Children } from 'react';
 import ReactDOM from 'react-dom/client';
 
 import App from './Components/App';
@@ -21,7 +21,9 @@ const GlobalStyles = createGlobalStyle`
          --offWhite: #ededed;
          --maxWidth: 1000px;
          --bs: 0 12px 24px 0 rgba(0,0,0,0.09);
+         
         box-sizing: border-box;
+        
      }
      *,*::before,*::after{
          box-sizing: inherit;
@@ -51,8 +53,11 @@ const GlobalStyles = createGlobalStyle`
 root.render(
   <React.StrictMode>
   <ThemeProvider>
+  <GlobalStyles/>
 
     <App />
+  
+
   </ThemeProvider>
   </React.StrictMode>
 );
