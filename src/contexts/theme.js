@@ -6,6 +6,7 @@ const themes = {
   darkMode: {
     backgroundColor: 'black',
     color: 'white',
+    border:"10px solid blue"
   },
   lightMode: {
     backgroundColor: 'white',

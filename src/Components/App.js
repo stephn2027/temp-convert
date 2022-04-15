@@ -3,11 +3,13 @@ import { ThemeContext } from '../contexts/theme';
 import React, { useContext, useEffect, useState } from 'react';
 import Temp from './Temp';
 import TempDisplay from './TempDisplay';
+import { MaterialUISwitch } from '../contexts/switchButton';
+import FormControlLabel from '@mui/material/FormControlLabel';
 
 function App() {
   
   const [{theme,isDark},toggleTheme] = useContext(ThemeContext);
-  console.log(theme, "theme")
+  
   const [temp, setTemp] = useState(0);
   const [scale, setScale] = useState(false);
   const [tempDisplay, setTempDisplay] = useState('');
@@ -33,8 +35,15 @@ function App() {
   };
 
   return (
-    <div className="App" style={{backgroundColor:theme.backgroundColor,color:theme.color}}>
-    <div>its a {isDark?"Dark theme":"light theme"} <button onClick={toggleTheme}>swicth to {!isDark?"Dark theme":"light theme"}</button></div>
+    <div className="App" style={{backgroundColor:theme.backgroundColor,color:theme.color,border:theme.border}}>
+    <div className='app__theme theme--switch'>its a {isDark?"Dark theme":"light theme"} 
+    
+      <FormControlLabel
+        control={<MaterialUISwitch sx={{ m: 1 }} defaultValue  />}
+        label={`switch to ${!isDark?"Dark theme":"Light theme"}`}
+        onClick={toggleTheme}
+      />
+    </div>
       <Temp
         temp={temp}
         onChangeScale={handleChangeScale}
