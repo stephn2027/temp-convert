@@ -1,4 +1,4 @@
-import styled from '@emotion/styled';
+import styled from 'styled-components';
 
 export const AppStyles = styled.div`
   margin: 0rem;

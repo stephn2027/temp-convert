@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { ToggleButtonGroup, ToggleButton } from '@mui/material';
-
+import { TempStyle, InputStyle } from '../styles/tempStyle';
 
 
 
@@ -11,7 +11,7 @@ export default function Temp({ temp, setTemp, scale, onChangeScale, isDark }) {
   const tempSignR = scale ? '℃' : '℉';
 
   return (
-    <div className="temp temp__container">
+    <TempStyle className="temp temp__container">
       <form className="temp__form">
         <div className="input__group">
           <label
@@ -30,6 +30,7 @@ export default function Temp({ temp, setTemp, scale, onChangeScale, isDark }) {
             name="number"
             value={temp ? temp : ''}
             onChange={(e) => setTemp(e.target.value)}
+            
           />
         </div>
         <div className="toggle__group">
@@ -51,6 +52,6 @@ export default function Temp({ temp, setTemp, scale, onChangeScale, isDark }) {
          
         </div>
       </form>
-    </div>
+    </TempStyle>
   );
 }

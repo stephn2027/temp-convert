@@ -1,11 +1,12 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { ThemeContext } from '../contexts/theme';
 import React, { useContext, useEffect, useState } from 'react';
 import Temp from './Temp';
 import TempDisplay from './TempDisplay';
-import { MaterialUISwitch } from '../contexts/switchButton';
+import { MaterialUISwitch } from '../styles/switchButton';
 import FormControlLabel from '@mui/material/FormControlLabel';
-import { AppStyles } from '../contexts/appStyles';
+import { AppStyles } from '../styles/appStyles';
+import { ThemeContext } from '../styles/theme';
+import Title from './Title';
 
 function App() {
   
@@ -51,6 +52,9 @@ function App() {
      
 
     </div>
+    <Title>
+
+    </Title>
       <Temp
         temp={temp}
         onChangeScale={handleChangeScale}

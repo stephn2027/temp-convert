@@ -4,13 +4,14 @@ export const ThemeContext = createContext();
 
 const themes = {
   darkMode: {
-    backgroundColor: '#2c387e',
-    color: 'white',
-    border:"10px solid blue"
+    backgroundColor: '#11051F',
+    color: '#E2E0D9',
+    
+    
   },
   lightMode: {
     backgroundColor: 'white',
-    color: 'black',
+    color: 'var(--black)',
   },
 };
 
