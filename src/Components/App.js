@@ -1,13 +1,15 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect, useLayoutEffect, useState } from 'react';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import {gsap} from 'gsap';
 import Temp from './Temp';
 import TempDisplay from './TempDisplay';
 import Title from './Title';
 import TempDetails from './TempDetails'
 import { MaterialUISwitch } from '../styles/switchButton';
-import FormControlLabel from '@mui/material/FormControlLabel';
 import { AppStyles } from '../styles/appStyles';
 import { ThemeContext } from '../styles/theme';
+
 
 function App() {
   const [{ theme, isDark }, toggleTheme] = useContext(ThemeContext);
@@ -15,9 +17,17 @@ function App() {
   const [temp, setTemp] = useState(0);
   const [scale, setScale] = useState(false);
   const [tempDisplay, setTempDisplay] = useState('');
+  const tl = gsap.timeline();
   useEffect(() => {
     convertTemp(temp);
   }, [temp, scale]);
+   
+  useLayoutEffect(()=>{
+    tl.fromTo('.App',{y:-610, opacity:0,duration:.5
+    },{y:0,duration:.5, opacity: 1})
+    
+    
+  },[]);
 
   const handleChangeScale = () => setScale(!scale);
 

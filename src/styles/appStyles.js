@@ -6,6 +6,7 @@ export const AppStyles = styled.div`
   .App {
     height: 100vh;
     display: block;
+    opacity: 0;
 
     .app__theme--switch {
       padding: 1rem;
