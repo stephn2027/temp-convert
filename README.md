@@ -25,7 +25,7 @@ By doing so, we can pass our state and data to process the changes from our user
 
 There are two main functions that handle our conversion: the `toFahrenheit` and `toCelcius` that accepts an input and returns a converted output depending on our user choices.
 
-I've used `Material Ui` for the switch button and theme change from light to dark. Used `styled-components` for the styling of the app and `Gsap` for basic animations. The theme change was built using `react context` to share the values(theme) and to avoid data drilling. React's useEffect hook and saving our user theme preference through localStorage optimization was also used in this implementation.  
+I've used `Material Ui` for the switch button and theme toggle button from light to dark. Used `styled-components` for the styling of the app and `Gsap` for basic animations. The theme change was built using `react context` to share the values(theme) and to avoid data drilling. React's useEffect hook and saving our user theme preference through localStorage optimization was also used in this implementation.  
 
 
 ## Available Scripts
