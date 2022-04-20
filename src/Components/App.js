@@ -1,15 +1,14 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useContext, useEffect, useLayoutEffect, useState } from 'react';
 import FormControlLabel from '@mui/material/FormControlLabel';
-import {gsap} from 'gsap';
+import { gsap } from 'gsap';
 import Temp from './Temp';
 import TempDisplay from './TempDisplay';
 import Title from './Title';
-import TempDetails from './TempDetails'
+import TempDetails from './TempDetails';
 import { MaterialUISwitch } from '../styles/switchButton';
 import { AppStyles } from '../styles/appStyles';
 import { ThemeContext } from '../styles/theme';
-
 
 function App() {
   const [{ theme, isDark }, toggleTheme] = useContext(ThemeContext);
@@ -21,13 +20,14 @@ function App() {
   useEffect(() => {
     convertTemp(temp);
   }, [temp, scale]);
-   
-  useLayoutEffect(()=>{
-    tl.fromTo('.App',{y:-610, opacity:0,duration:.5
-    },{y:0,duration:.5, opacity: 1})
-    
-    
-  },[]);
+
+  useLayoutEffect(() => {
+    tl.fromTo(
+      '.App',
+      { y: -610, opacity: 0, duration: 0.5 },
+      { y: 0, duration: 0.5, opacity: 1 }
+    );
+  }, []);
 
   const handleChangeScale = () => setScale(!scale);
 
@@ -77,7 +77,7 @@ function App() {
           temp={temp}
           scale={scale}
         ></TempDisplay>
-        <TempDetails scale={scale}/>
+        <TempDetails scale={scale} />
       </div>
     </AppStyles>
   );

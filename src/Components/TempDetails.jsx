@@ -44,7 +44,7 @@ const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({
 }));
 
 export default function TempDetails({scale}) {
-  const [expanded, setExpanded] = React.useState('panel1');
+  const [expanded, setExpanded] = React.useState(false);
   const celcuisDetails = {
     title: 'Quick and easy Fahrenheit to Celsius conversion',
     text: "There's a simple rule to convert Fahrenheit to Celsius that should be good enough for general use. Simply take 30 off the Fahrenheit value, and then half that number.",

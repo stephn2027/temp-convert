@@ -28,22 +28,24 @@ export const TempStyle = styled.div`
         border-radius: 0.3rem;
         color: var(--blue-dark);
       }
-      
-      
     }
   }
-  .toggle__group{
-        .toggle__text{
-          padding: .5rem;
-        }
-        .toggle__btn{
-            line-height: 1;
-            font-weight: bolder;
-            width: clamp(3rem,2.24vw,10rem);
-            height: clamp(3rem,2.24vw,10rem);
-            margin-block: auto;
-            color:auto;
-            background-color: rgba(136,202,255, 0.4);
-      }
-      }
+  .toggle__group {
+    .toggle__text {
+      padding: 0.5rem;
+    }
+    .toggle__btn {
+      line-height: 1;
+      font-weight: 700;
+      font-size: 1.2rem;
+      width: clamp(3rem, 2.24vw, 10rem);
+      height: clamp(3rem, 2.24vw, 10rem);
+      margin-block: auto;
+      color: auto;
+      /* background-color: rgba(136,202,255, 0.4); */
+    }
+  }
+  .css-1ulh13c-MuiButtonBase-root-MuiToggleButton-root.Mui-selected {
+    background-color: rgba(134, 202, 255, 0.4);
+  }
 `;
