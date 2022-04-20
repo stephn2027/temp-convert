@@ -43,7 +43,7 @@ const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({
   borderTop: '1px solid rgba(0, 0, 0, .125)',
 }));
 
-export default function TempDetails({scale}) {
+export default function TempDetails({ scale }) {
   const [expanded, setExpanded] = React.useState(false);
   const celcuisDetails = {
     title: 'Quick and easy Fahrenheit to Celsius conversion',
@@ -53,7 +53,7 @@ export default function TempDetails({scale}) {
   };
   const fahrenheitDetails = {
     title: 'Quick and easy Celcuis to Fahrenheit conversion',
-    text: "Celsius to Fahrenheit conversion is probably the most confusing conversion there is, but a simple °C to °F conversion is actually quite easy – just double the °C figure and add 30. This should be reasonably accurate for weather temperatures.",
+    text: 'Celsius to Fahrenheit conversion is probably the most confusing conversion there is, but a simple °C to °F conversion is actually quite easy – just double the °C figure and add 30. This should be reasonably accurate for weather temperatures.',
     titleFormula: 'Celsius to Fahrenheit formula',
     textFormula: '°F =°C * (9/5) + 32',
   };
@@ -67,17 +67,22 @@ export default function TempDetails({scale}) {
       <Accordion
         expanded={expanded === 'panel1'}
         onChange={handleChange('panel1')}
-        className='accordion__inner'
+        className="accordion__inner"
       >
         <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
           <Typography>Formula</Typography>
         </AccordionSummary>
-        <AccordionDetails >
-          <Typography className="temp-details__container" >
-            <h2> {scale?celcuisDetails.title:fahrenheitDetails.title}</h2>
-            {scale?celcuisDetails.text:fahrenheitDetails.text}
-            <h3> {scale?celcuisDetails.titleFormula:fahrenheitDetails.titleFormula}</h3>
-            {scale?celcuisDetails.textFormula:fahrenheitDetails.textFormula}
+        <AccordionDetails>
+          <Typography className="temp-details__container">
+            <h2> {scale ? celcuisDetails.title : fahrenheitDetails.title}</h2>
+            {scale ? celcuisDetails.text : fahrenheitDetails.text}
+            <h3>
+              {' '}
+              {scale
+                ? celcuisDetails.titleFormula
+                : fahrenheitDetails.titleFormula}
+            </h3>
+            {scale ? celcuisDetails.textFormula : fahrenheitDetails.textFormula}
           </Typography>
         </AccordionDetails>
       </Accordion>

@@ -9,8 +9,8 @@ export default function Title() {
     <TitleStyled className="title__container">
       <div className="title__text" style={{ color: theme.color }}>
         <div>
-          <span className="text--first">Temperature</span>
-          <span className="text--second">Converter</span>
+          <div className="text--first">Temperature</div>
+          <div className="text--second">Converter</div>
         </div>
       </div>
     </TitleStyled>
