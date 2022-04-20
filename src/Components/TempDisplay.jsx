@@ -1,7 +1,6 @@
 import React from 'react';
 import { ResultStyled } from '../styles/resultStyled';
 
-
 export default function TempDisplay({ tempDisplay, scale, temp }) {
   let tempSign = scale ? '℉' : '℃';
   let tempSignR = scale ? '℃' : '℉';
@@ -13,7 +12,6 @@ export default function TempDisplay({ tempDisplay, scale, temp }) {
             {temp} {tempSign} = {tempDisplay} {tempSignR}
           </h1>
         </div>
-       
       </div>
     </ResultStyled>
   );

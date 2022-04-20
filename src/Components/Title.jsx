@@ -1,11 +1,16 @@
-import React from 'react'
-
+import React, { useContext } from 'react';
+import { TitleStyled } from '../styles/title';
+import { ThemeContext } from '../styles/theme.js';
 export default function Title() {
+  const [{ theme }] = useContext(ThemeContext);
   return (
-    <div className='title__container'>
-        <div className="title__text">
-            <h1>Temperature Converter</h1>
+    <TitleStyled className="title__container">
+      <div className="title__text" style={{ color: theme.color }}>
+        <div>
+          <span className="text--first">Temperature</span>
+          <span className="text--second">Converter</span>
         </div>
-    </div>
-  )
+      </div>
+    </TitleStyled>
+  );
 }

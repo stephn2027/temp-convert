@@ -6,7 +6,7 @@ export const AppStyles = styled.div`
   .App {
     height: 100vh;
     display: block;
-    
+
     .app__theme--switch {
       padding: 1rem;
       display: flex;
