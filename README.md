@@ -12,7 +12,20 @@ View the live [demo](https://temp-convert.vercel.app/).
 ## Libraries and tools used:
 `React.Js` , `Material UI`, `Styled-Components`, `Gsap`.
 
-The main process of the app is to receive an input from the user and convert it into a temperature unit namely `celcius` to `fahrenheit` and vice versa so i decided to use `react.js` to make the single page application because of its features, one specifically is the use of virtual dom since we want our app to be fast and responsive as we are dealing with real time conversion that will be displayed instantaneosly. The initial environment set-up was done by running `CRA (create-react-app)` and separated the directory layout folders by types. The UI was built primarily on user input and rendered output and the option to choose between temperature types so i created different components that would handle the input and output of the conversion then lifted the state so that our parent component holds the state where we will base our temperature and its unit or type. By doing so, we can pass our state and react hooks to process the changes from our user input and can instantly render the result of our conversion back to the UI through our controlled components. There are two main functions that handle our conversion: the `toFahrenheit` and `toCelcius` that accepts an input and returns a converted output depending on our user choices. I've used `Material Ui` for the switch button and theme change from light to dark. Used `styled-components` for the styling of our app and `Gsap` for basic animations. The theme change was built using `react context` to share the values(theme) and to avoid data drilling. React's UseEffect hook and saving our user theme preference through localStorage optimization was also used in this implementation.  
+## Why React.js?
+
+The main process of the app is to receive an input from the user and convert it into a temperature unit namely `celcius` to `fahrenheit` and vice versa so i decided to use `react.js` to make the single page application because of its features, one specifically is the use of virtual dom since we want our app to be fast and responsive as we are dealing with real time conversion that will be displayed instantaneosly.
+
+## Design, architechture and implementation
+
+The initial environment set-up was done by running `CRA (create-react-app)` and separated the directory layout folders by types. 
+The UI was built primarily on user input and rendered output and the option to choose between temperature types so i created different components that would handle the input and output of the conversion then lifted the state up so that our parent component holds the state where we will base our temperature values and its unit or type. 
+
+By doing so, we can pass our state and data to process the changes from our user input and can instantly render the result of our conversion back to the UI through our controlled components. 
+
+There are two main functions that handle our conversion: the `toFahrenheit` and `toCelcius` that accepts an input and returns a converted output depending on our user choices.
+
+I've used `Material Ui` for the switch button and theme change from light to dark. Used `styled-components` for the styling of the app and `Gsap` for basic animations. The theme change was built using `react context` to share the values(theme) and to avoid data drilling. React's useEffect hook and saving our user theme preference through localStorage optimization was also used in this implementation.  
 
 
 ## Available Scripts
