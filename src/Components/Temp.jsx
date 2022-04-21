@@ -42,9 +42,14 @@ export default function Temp({ temp, setTemp, scale, onChangeScale, isDark }) {
           >
             <div className="toggle__text">Swap Units</div>
 
-            <ToggleButton value={scaleName}  className="toggle__btn">℃</ToggleButton>
+            <ToggleButton value={scaleName} className="toggle__btn">
+              ℃
+            </ToggleButton>
 
-            <ToggleButton value={scaleNameR} className="toggle__btn"> ℉ </ToggleButton>
+            <ToggleButton value={scaleNameR} className="toggle__btn">
+              {' '}
+              ℉{' '}
+            </ToggleButton>
           </ToggleButtonGroup>
         </div>
       </form>

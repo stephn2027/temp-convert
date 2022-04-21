@@ -9,7 +9,7 @@ const themes = {
     textColor: '#63FFF5',
   },
   lightMode: {
-    backgroundColor: '#EAF4FC',
+    backgroundColor: '#DEFFFD',
     color: 'var(--black)',
     textColor: '#0991B6',
   },
