@@ -1,15 +1,16 @@
 import { createContext, useEffect } from 'react';
 import { useState } from 'react';
+
 export const ThemeContext = createContext();
 
 const themes = {
   darkMode: {
-    backgroundColor: '#324955',
-    color: '#ffffff',
+    backgroundColor: '#0f161c',
+    color: '#fdfdfd',
     textColor: '#63FFF5',
   },
   lightMode: {
-    backgroundColor: '#DEFFFD',
+    backgroundColor: '#1231',
     color: 'var(--black)',
     textColor: '#0991B6',
   },

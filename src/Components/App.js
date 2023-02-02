@@ -17,6 +17,7 @@ function App() {
   const [scale, setScale] = useState(false);
   const [tempDisplay, setTempDisplay] = useState('');
   const tl = gsap.timeline();
+  
   useEffect(() => {
     convertTemp(temp);
   }, [temp, scale]);
@@ -43,6 +44,7 @@ function App() {
     let tempVal = parseFloat(value);
     let convertedTemp = scale ? toCelcuis(tempVal) : toFahrenheit(tempVal);
     setTempDisplay(Math.round(convertedTemp * 1000) / 1000);
+    
   };
 
   return (
